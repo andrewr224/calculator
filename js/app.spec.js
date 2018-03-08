@@ -16,11 +16,11 @@ describe('add', () => {
 
 describe('subtract', () => {
   it('subtracts numbers', () => {
-    expect(calculator.substract(10,4)).toEqual(6);
+    expect(calculator.subtract(10,4)).toEqual(6);
   });
 
   it('subtract negative numbers', () => {
-    expect(calculator.substract(-6, 4)).toEqual(-10);
+    expect(calculator.subtract(-6, 4)).toEqual(-10);
   });
 });
 
@@ -41,6 +41,24 @@ describe('divide', () => {
 
   it('divide negative numbers', () => {
     expect(calculator.divide(4, -2)).toEqual(-2);
+  });
+});
+
+describe('operate', () => {
+  it('calls "add" function', () => {
+    expect(calculator.operate('+', 2, 3)).toEqual(5);
+  });
+
+  it('calls "subtract" function', () => {
+    expect(calculator.operate('-', 3, 2)).toEqual(1);
+  });
+
+  it('calls "multiply"', () => {
+    expect(calculator.operate('*', 3, 2)).toEqual(6);
+  });
+
+  it('calls "divide"', () => {
+    expect(calculator.operate('/', 2, 2)).toEqual(1);
   });
 });
 
