@@ -51,13 +51,7 @@ function typeIn(e) {
   display();
 };
 
-function display(val = '') {
-  if (val) {
-    input.innerText = val;
-
-    return;
-  }
-
+function display() {
   let output = '';
 
   if (operand)   { output = output.concat(operand); }
@@ -101,6 +95,7 @@ function operate() {
   }
 
   reset();
-  display(result);
+  inputVal = result;
+  display();
 }
 
