@@ -1,3 +1,3 @@
 ## JS Calculator
 
-### this is a work in progress...
+### Simple JS calculator. You can fiddle with it [here](https://andrewr224.github.io/calculator/)
