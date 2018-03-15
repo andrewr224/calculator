@@ -30,9 +30,9 @@ function delLast() {
   display();
 }
 
-function selectOperation(e) {
+function selectOperation() {
   if (inputVal) {
-    operation = e.toElement.innerText;
+    operation = this.getAttribute('data-value');
 
     operand  = inputVal;
     inputVal = '';
@@ -41,10 +41,13 @@ function selectOperation(e) {
   }
 }
 
-function typeIn(e) {
-  let value = e.toElement.innerText;
+function typeIn() {
+  let value = this.getAttribute('data-value');
+
+  console.log(value);
 
   if (value == '.' && inputVal.includes('.')) { return false; }
+  if (inputVal[0] === '0' && inputVal[1] !== '.' && value !== '.') { inputVal = ''; }
 
   inputVal = inputVal.concat(value);
 
